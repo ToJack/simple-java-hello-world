@@ -60,5 +60,12 @@ spec:
 	}
       }
     }
+    stage('Run'){
+      steps{
+	container('docker'){
+	  sh 'docker run my-app:$BUILD_NUMBER'
+	}
+      }
+    }
   }
 }
