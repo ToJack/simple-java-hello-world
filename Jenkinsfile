@@ -45,17 +45,17 @@ spec:
       }
     }
 
-    stage('Test') {
-      steps {
-	container('maven') {
+    stage('Test'){
+      steps{
+	container('maven'){
 	  sh 'mvn test'
 	}
       } 
     }
 
-    stage('Creation') {
-      steps {
-	container('docker') {
+    stage('Creation'){
+      steps{
+	container('docker'){
 	  sh 'docker build -t my-app:$BUILD_NUMBER .'
 	}
       }
